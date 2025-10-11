@@ -55,5 +55,4 @@ window.addEventListener('resize', () => {
   renderer.setPixelRatio(window.devicePixelRatio); // optional for high-DPI screens
 });
 
- animate();
-
+animate();
