@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    // other options...
-    "paths": {
-      "three/webgpu": ["/3d-render/node_modules/three/build/three.webgpu.js"],
-      "three/tsl": ["/3d-render/node_modules/three/build/three.tsl.js"],
-    },
-  }
-}
