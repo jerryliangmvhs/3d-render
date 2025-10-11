@@ -42,6 +42,7 @@ camera.rotation.x = -0.5;
 function animate(){
     requestAnimationFrame(animate);
     renderer.render(scene,camera);
+    cube.rotation.y += 0.01;
 }
 
 window.addEventListener('resize', () => {
