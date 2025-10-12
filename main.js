@@ -40,7 +40,7 @@ dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
 const loader = new GLTFLoader();
 loader.setDRACOLoader(dracoLoader);
 loader.load(
-  'models/car3.glb',
+  './models/car3.glb',
   (gltf) => {
     scene.add(gltf.scene);
   },
