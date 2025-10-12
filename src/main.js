@@ -12,7 +12,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.set(9, 8, 17);
+camera.position.set(17, 8, 40);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -25,7 +25,7 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.25;
 controls.rotateSpeed = 1;
 
-const directionalLight = new THREE.DirectionalLight('rgba(255, 255, 255, 1)', 2); // color, intensity
+const directionalLight = new THREE.DirectionalLight('rgba(255, 255, 255, 1)', 2.5); // color, intensity
 directionalLight.position.set(3, 6, 18); // x, y, z
 scene.add(directionalLight);
 
