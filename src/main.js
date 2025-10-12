@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'; // fixed 
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x87ceeb);
+scene.background = new THREE.Color('rgba(49, 50, 54, 1)');
 
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -25,8 +25,8 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.25;
 controls.rotateSpeed = 1;
 
-const directionalLight = new THREE.DirectionalLight('rgba(132, 214, 237, 1)', 1); // color, intensity
-directionalLight.position.set(7, 6, 18); // x, y, z
+const directionalLight = new THREE.DirectionalLight('rgba(255, 255, 255, 1)', 2); // color, intensity
+directionalLight.position.set(3, 6, 18); // x, y, z
 scene.add(directionalLight);
 
 directionalLight.castShadow = true;
