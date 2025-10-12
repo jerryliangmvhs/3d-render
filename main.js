@@ -31,18 +31,24 @@ const materials = [
   new THREE.MeshBasicMaterial({ color: 'rgb(255,0,255)' })  // left
 ];
 
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; // smoother motion
+controls.dampingFactor = 0.25;
+controls.rotateSpeed = 1;
+
 const cube = new THREE.Mesh(geometry, materials);
 scene.add(cube);
 
 camera.position.z = 5;
 camera.position.y = 3;
-camera.rotation.x = -0.5;
+cube.rotation.x = 0;
+
 
 
 function animate(){
     requestAnimationFrame(animate);
+    controls.update();
     renderer.render(scene,camera);
-    cube.rotation.y += 0.01;
 }
 
 window.addEventListener('resize', () => {
