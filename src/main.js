@@ -35,12 +35,12 @@ directionalLight.shadow.camera.near = 0.5;
 directionalLight.shadow.camera.far = 50;
 
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+dracoLoader.setDecoderPath(import.meta.env.BASE_URL + 'draco/');
 
 const loader = new GLTFLoader();
 loader.setDRACOLoader(dracoLoader);
 loader.load(
-  './models/car3.glb',
+  import.meta.env.BASE_URL + 'models/car3.glb',
   (gltf) => {
     scene.add(gltf.scene);
   },
