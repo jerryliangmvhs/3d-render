@@ -25,7 +25,7 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.25;
 controls.rotateSpeed = 1;
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // color, intensity
+const directionalLight = new THREE.DirectionalLight('rgba(132, 214, 237, 1)', 1); // color, intensity
 directionalLight.position.set(7, 6, 18); // x, y, z
 scene.add(directionalLight);
 
