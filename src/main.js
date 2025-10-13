@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color('rgba(49, 50, 54, 1)');
+scene.background = new THREE.Color('rgba(56, 57, 62, 1)');
 
 const camera = new THREE.PerspectiveCamera(
   75,
