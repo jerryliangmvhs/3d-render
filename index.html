@@ -11,16 +11,33 @@
     <meta property="og:image" content="https://lab.jerryliangportfolio.com/3d-render/favicon.png"/>
     <meta property="og:image:secure_url" content="https://lab.jerryliangportfolio.com/3d-render/favicon.png"/>
     <meta property="twitter:image" content="https://lab.jerryliangportfolio.com/3d-render/favicon.png"/>
-
-
-
-
-
-
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <title>Jerry's Three JS App</title>
 </head>
-<body style = "margin: 0; overscroll-behavior: none; overflow-y: hidden;">
+<style>
+    @font-face{
+        font-family: custom-font;
+        src: url("Inter.ttf");
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        font-size: clamp(30px,4vw,40px) !important;
+    }
+    .instructions{
+        color: rgba(255,255,255,0.75);
+        bottom: 100px;
+        position: absolute;
+        text-align: center;
+        font-family: custom-font;
+        font-weight: 600;
+        font-size: clamp(30px,4vw,40px) !important;
+    }
+</style>
+<body style = "margin: 0; overscroll-behavior: none; overflow-y: hidden; position: relative;">
     <script type = "module" src = "src/main.js"></script>
+    <p class = "instructions">Click and drag to look around.<br>Scroll to zoom in and out.</p>
 </body>
 </html>
