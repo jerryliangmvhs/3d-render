@@ -2,6 +2,8 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color('rgba(56, 57, 62, 1)');
@@ -38,6 +40,7 @@ directionalLight.shadow.camera.far = 50;
 const dracoLoader = new DRACOLoader();
 dracoLoader.setDecoderPath(import.meta.env.BASE_URL + 'draco/');
 
+/*
 const loader = new GLTFLoader();
 loader.setDRACOLoader(dracoLoader);
 loader.load(
@@ -50,6 +53,31 @@ loader.load(
     console.error('Error loading model:', error);
   }
 );
+*/
+
+
+const mtlLoader = new MTLLoader();
+mtlLoader.setPath('models/'); // folder where your files are
+mtlLoader.load('car4.mtl', (materials) => {
+  materials.preload();
+
+  // Then load the OBJ, passing in materials
+  const objLoader = new OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.setPath('models/');
+  objLoader.load(
+    'car4.obj',
+    (object) => {
+      scene.add(object);
+    },
+    (xhr) => console.log((xhr.loaded / xhr.total * 100) + '% loaded'),
+    (error) => console.error('Error loading OBJ:', error)
+  );
+});
+
+
+
+
 
 function animate() {
   requestAnimationFrame(animate);
