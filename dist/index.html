@@ -2,9 +2,57 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>My 3D Renderer App!</title>
-  <script type="module" crossorigin src="/3d-render/assets/index-CzgvLYcY.js"></script>
+    <meta property="og:site_name" content="Jerry's Three JS App" />
+    <meta property="og:title" content="Jerry's Three JS App" />
+    <meta property="twitter:title" content="Jerry's Three JS App" />
+    <meta property="og:url" content="https://lab.jerryliangportfolio.com/3d-render/" />
+    <meta property="og:description" content="Check out my Interactive 3D Project I made in Github Pages" />
+    
+    <meta property="og:image" content="https://lab.jerryliangportfolio.com/3d-render/favicon.png"/>
+    <meta property="og:image:secure_url" content="https://lab.jerryliangportfolio.com/3d-render/favicon.png"/>
+    <meta property="twitter:image" content="https://lab.jerryliangportfolio.com/3d-render/favicon.png"/>
+    <link rel="icon" type="image/x-icon" href="/3d-render/assets/favicon-DtNYLruQ.png">
+    <title>Jerry's Three JS App</title>
+  <script type="module" crossorigin src="/3d-render/assets/index-D2MfSKGu.js"></script>
 </head>
-<body style = "margin: 0; overscroll-behavior: none; overflow-y: hidden;">
+<style>
+    @font-face{
+        font-family: custom-font;
+        src: url("/3d-render/assets/Poxast-Dw42SJmu.ttf");
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        font-size: clamp(10px,2vw,20px) !important;
+    }
+    .instructions{
+        color: rgba(255,255,255,0.75);
+        bottom: 100px;
+        position: absolute;
+        text-align: center;
+        font-family: custom-font;
+        font-weight: 600;
+        font-size: clamp(10px,2vw,20px) !important;
+        background-color: rgba(0,0,0,0.75);
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .instructions.hidden{
+        display: none;
+    }
+</style>
+<body style = "margin: 0; overscroll-behavior: none; overflow-y: hidden; position: relative;">
+    <p class = "instructions" id = "instructions">Click and drag to look around.<br>Scroll to zoom in and out.</p>
 </body>
+<script>
+    const instructions = document.getElementById("instructions");
+    document.body.addEventListener('click', function(event) {
+        instructions.classList.add('hidden');
+    });
+    window.addEventListener('scroll', () => {
+        instructions.classList.add('hidden');
+    });
+</script>
 </html>
